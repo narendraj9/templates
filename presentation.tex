@@ -1,0 +1,106 @@
+%
+% Beamer Presentation Template
+%
+
+\documentclass{beamer}
+
+% Metadata
+\title{Title}
+\subtitle{Subtitle}
+\author{Narendra Joshi \\
+  \medskip
+  narendraj9@gmail.com
+}
+\date{\today}
+
+% Packages
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage{minted}
+\usepackage{multicol}
+
+% Appearance
+\usetheme{Madrid}
+\renewcommand{\familydefault}{\sfdefault}
+
+% graphics settings | folder for keeping images
+\graphicspath{{./images/}}
+\DeclareGraphicsExtensions{.png,.jpg}
+
+% A command that I commonly use for inserting images. 
+% \fimage{height}{image_name}
+\newenvironment{fimage}[2][\textheight]
+               { \begin{figure}
+                   \centering
+                   \includegraphics[width=\textwidth, height=#1, keepaspectratio]{#2}
+               }
+               { \end{figure} }
+
+
+
+\begin{document}
+
+% Title
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Frames
+%             |-> t or c for top or center alignment
+\begin{frame}[t]
+  \frametitle{Outline}
+
+  \begin{itemize}
+  \item{First this.}
+  \item{Then this.}
+  \item{And that.}
+  \end{itemize}
+
+\end{frame}
+
+% A Frame with code
+\begin{frame}[fragile,t]
+  \frametitle{Tile of the slide}
+
+  % code                                 programming language <-|
+  \inputminted[frame=lines,fontsize=\footnotesize,linenos=true]{c}{pathToFile}
+
+  Let's think about it for a while [the code].
+
+\end{frame}
+
+% A Frame with multiple columns
+\begin{frame}[fragile,t]
+  \frametitle{What gives?}
+  
+  \begin{multicols}{2}
+
+    % Left column
+    \inputminted[frame=lines,fontsize=\tiny]{haskell}{fileOnLeft.hs}
+
+    \begin{itemize}
+    \item Fluff on Left
+    \item Fluff on Left
+    \end{itemize}
+
+    \columnbreak
+
+    % Right column
+    \inputminted[frame=lines,fontsize=\tiny]{haskell}{fileOnRight.hs}
+
+    \begin{itemize}
+    \item Fluff on right.
+    \item Fluff on right.
+    \end{itemize}
+
+  \end{multicols}
+
+\end{frame}
+
+% An fimage example
+\begin{frame}[t]
+  \frametitle{Title.Title.Title}
+  \begin{fimage}[18em]{beginnings} \end{fimage}
+\end{frame}
+
+\end{document}

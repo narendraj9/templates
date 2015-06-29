@@ -1,0 +1,40 @@
+%% 
+% Latex template for reports
+%
+
+\documentclass[12pt]{report}
+
+% Packages
+\usepackage{graphicx}
+\usepackage{setspace}
+
+% Metatdata
+\title{Report Title}
+\author{Narendra Joshi}
+\date{\today}
+
+% Bibliography
+\usepackage{biblatex}
+% references.bib must be present in the same directory
+\addbibresource{references.bib}
+% Change the strings ``Bibliograph'' to ``References''
+\DefineBibliographyStrings{english}{
+  bibliography = {References},
+}
+
+% Global settings
+\doublespacing
+
+\begin{document}
+\maketitle
+
+\chapter{Introduction}
+Intro. Intro. Intro.
+
+\chapter{Conclusion}
+Conclusion. Conclusion. Conclusion.
+
+\printbibliography
+
+% That's all folks!
+\end{document}

@@ -1,1 +1,1 @@
-A repository for keeping templates.
+A repository of templates.
